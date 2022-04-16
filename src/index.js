@@ -65,7 +65,7 @@ $(()=>{
         miniImg.show();
         btnFetch.hide();
         wordKey.hide();
-        miniImg.attr("src", "../img/icono.png").css({ width: "20%" });
+        miniImg.attr("src", "./img/icono.png").css({ width: "20%" });
         wordKey.val("");
         wordKey.val("");
     }
@@ -128,11 +128,11 @@ $(()=>{
                 processData: false,
                 contentType: false,
                 success: ()=>{
-                    resPostImg("../img/check.svg", "Publicación Exitosa", "#0f0");
+                    resPostImg("./img/check.svg", "Publicación Exitosa", "#0f0");
                     setTimeout(()=> hideWindowPublic(), 4000);
                 },
                 error: ()=>{
-                    resPostImg("../img/x.svg", "Publicación Fallida", "#f00");
+                    resPostImg("./img/x.svg", "Publicación Fallida", "#f00");
                     setTimeout(()=> hideWindowPublic(), 4000);
                 }
             });
