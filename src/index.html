@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/icono.png" type="image/x-icon">
+    <link rel="stylesheet" href="./index.css">
+    <title>Galeria Publica</title>
+</head>
+<body>
+
+    <div class="page">
+        <main class="image">
+            <h1 class="title">Galeria Publica</h1>
+    
+            <section class="image_data">
+                <nav class="image_search">
+                    <button class="btn_search inactive">Buscar</button>
+                    <input class="input_search" type="search" placeholder="Busca una imagen con una descripción">
+                    <button class="btn_public">Publicar Imagen</button>
+                </nav>
+            </section>
+    
+            <section class="images_ob">
+                <div class="images"></div>
+                <div class="observer"></div>
+                <div class="load_img"></div>
+            </section>
+        </main>
+        
+        <main class="public">
+            <button class="btn_X">
+                <img src="../img/x.svg" alt="X">
+            </button>
+            
+            <section class="public_content">
+                <h1>Publicar Imagen</h1>
+                <div class="img_file">
+                    <div class="load_file"></div>
+                    <div class="img_file_res">
+                        <img class="res_icon" src="" alt="respuesta">
+                        <p class="res_info"></p>
+                    </div>
+                    <img class="ico_file" src="../img/icono.png" alt="icono">
+                </div>
+                <form class="formImg" enctype="multipart/form-data">
+                    <label class="input_img">
+                        <p>Subir Imagen</p>
+                        <input class="img" type="file" name="img">
+                    </label>
+                    <input class="wordKey" type="text" name="wordKey" placeholder="Palabra clave">
+                    <button class="btn_fetch" type="submit">Publicar</button>
+                </form>
+            </section>
+        </main>
+    
+        <main class="img_zoom">
+            <section class="controlls">
+                <button class="btnC_z_in btnC_z">
+                    <img src="../img/zoom-in.svg" alt="-">
+                </button>
+    
+                <button class="btnC_z_out btnC_z">
+                    <img src="../img/zoom-out.svg" alt="+">
+                </button>
+    
+                <button class="btn_controll_X">
+                    <img src="../img/x.svg" alt="X">
+                </button>
+            </section>
+    
+            <section class="img_img">
+                <img alt="imagen">
+            </section>
+        </main>
+    
+        <footer>
+            <section>
+                <b>Esteban Javier Castelblanco García</b>
+            </section>
+        </footer>
+    </div>
+
+    <script src="./JQuery.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
