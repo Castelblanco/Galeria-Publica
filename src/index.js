@@ -25,12 +25,13 @@ $(()=>{
         btnZoomIn = $(".btnC_z_in"),
         btnZoomOut = $(".btnC_z_out"),
         page = 0,
+        api = "http://localhost:3000/",
         changeUrl = true,
         scroll = true,
         observer = new IntersectionObserver(entries =>{
             if (entries[0].isIntersecting && scroll){
-                if (changeUrl) findImg(`https://api-galeria.herokuapp.com/?autorized=1030708715&page=${page++}&size=20`);
-                else findImg(`https://api-galeria.herokuapp.com/?autorized=1030708715&page=${page++}&size=20&wordKey=${inputSearch.val()}`);
+                if (changeUrl) findImg(`${api}?page=${page++}&size=20`);
+                else findImg(`${api}?page=${page++}&size=20&wordKey=${inputSearch.val()}`);
             }
         }, {rootMargin: "0px 0px 10px 0px"});
 
@@ -43,10 +44,8 @@ $(()=>{
                 loadImg.hide();
                 if (res.img.length !== 0){
                     res.img.forEach(i => {
-                        let blob = new Blob([new Uint8Array(i.img.data)], {type: i.type}),
-                            url = URL.createObjectURL(blob);
                         trayImg.append($("<img/>", {
-                            "src": `${url}`,
+                            "src": `data:${i.type};base64,${i.img}`,
                             "alt": "image",
                             "class": "imgVisible"
                         }));
@@ -95,7 +94,7 @@ $(()=>{
             changeUrl = false;
             scroll = true;
             trayImg.children().remove();
-            findImg(`https://api-galeria.herokuapp.com/?autorized=1030708715&page=${page++}&size=10&wordKey=${inputSearch.val()}`);
+            findImg(`${api}?page=${page++}&size=10&wordKey=${inputSearch.val()}`);
         }
     });
 
@@ -123,11 +122,11 @@ $(()=>{
             let dataImg = new FormData(formImg[0]);
             $.ajax({
                 type: "post",
-                url: "https://api-galeria.herokuapp.com/upload.img?autorized=1030708715",
+                url: "http://localhost:3000/upload.img",
                 data: dataImg,
                 processData: false,
                 contentType: false,
-                success: ()=>{
+                success: (res)=>{
                     resPostImg("./img/check.svg", "Publicación Exitosa", "#0f0");
                     setTimeout(()=> hideWindowPublic(), 4000);
                 },
