@@ -25,7 +25,7 @@ $(()=>{
         btnZoomIn = $(".btnC_z_in"),
         btnZoomOut = $(".btnC_z_out"),
         page = 0,
-        api = "http://localhost:3000/",
+        api = "https://api-galeria-production.up.railway.app/",
         changeUrl = true,
         scroll = true,
         observer = new IntersectionObserver(entries =>{
@@ -122,7 +122,7 @@ $(()=>{
             let dataImg = new FormData(formImg[0]);
             $.ajax({
                 type: "post",
-                url: "http://localhost:3000/upload.img",
+                url: `${api}upload.img`,
                 data: dataImg,
                 processData: false,
                 contentType: false,
