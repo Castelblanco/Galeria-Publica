@@ -25,7 +25,7 @@ $(()=>{
         btnZoomIn = $(".btnC_z_in"),
         btnZoomOut = $(".btnC_z_out"),
         page = 0,
-        api = "https://api-galeria-production.up.railway.app/",
+        api = "https://api-galeria-production.up.railway.app",
         changeUrl = true,
         scroll = true,
         observer = new IntersectionObserver(entries =>{
