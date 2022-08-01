@@ -25,7 +25,7 @@ $(()=>{
         btnZoomIn = $(".btnC_z_in"),
         btnZoomOut = $(".btnC_z_out"),
         page = 0,
-        api = "https://api-galeria-production.up.railway.app",
+        api = /* "https://api-galeria-production.up.railway.app" */"http://localhost:3000",
         changeUrl = true,
         scroll = true,
         observer = new IntersectionObserver(entries =>{
@@ -109,7 +109,6 @@ $(()=>{
         let img = e.target.files[0];
         let url = URL.createObjectURL(img);
         miniImg.attr("src", url).css({ width: "100%" });
-
     })
 
     formImg.submit(e =>{
@@ -120,9 +119,9 @@ $(()=>{
             miniImg.hide(500);
             loadFile.show(500);
             let dataImg = new FormData(formImg[0]);
-            $.ajax({
+            /* $.ajax({
                 type: "post",
-                url: `${api}upload.img`,
+                url: `${api}/upload.img`,
                 data: dataImg,
                 processData: false,
                 contentType: false,
@@ -134,7 +133,7 @@ $(()=>{
                     resPostImg("./img/x.svg", "Publicación Fallida", "#f00");
                     setTimeout(()=> hideWindowPublic(), 4000);
                 }
-            });
+            }); */
         }
     })
 

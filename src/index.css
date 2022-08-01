@@ -167,6 +167,7 @@ body{
 
 .wordKey{
     display: none;
+    height: 50px;
     width: 60%;
     padding: 0 4px;
     font-size: 20px;
@@ -321,6 +322,15 @@ footer{
 
     .btn_public{
         font-size: 15px;
+    }
+
+    .formImg{
+        display: block;
+    }
+
+    .wordKey{
+        width: 100%;
+        margin: 10px 0;
     }
     
 }
