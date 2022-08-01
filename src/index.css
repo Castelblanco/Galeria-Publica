@@ -317,8 +317,25 @@ footer{
         border-radius: 16px;
     }
 
+    .input_search::placeholder{ font-size: 15px; }
+
     .btn_public{
         font-size: 15px;
+    }
+    
+}
+
+@media screen and (max-width: 560px) {
+
+    .btn_search{
+        font-size: 14px;
+        border-radius: 16px;
+    }
+
+    .input_search::placeholder{ font-size: 15px; }
+
+    .btn_public{
+        font-size: 13px;
     }
     
 }
