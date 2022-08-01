@@ -44,12 +44,11 @@ $(()=>{
                 loadImg.hide();
                 if (res.img.length !== 0){
                     res.img.forEach(i => {
-                        console.log(i);
-                        /* trayImg.append($("<img/>", {
+                        trayImg.append($("<img/>", {
                             "src": `data:${i.type};base64,${i.img}`,
                             "alt": "image",
                             "class": "imgVisible"
-                        })); */
+                        }));
                     });
                 }else scroll = false;
             },
