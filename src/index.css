@@ -302,7 +302,13 @@ body{
 
 /* Footer */
 
-footer{ text-align: center; }
+footer{
+    width: 100vw;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
 
 /* Response */
 
